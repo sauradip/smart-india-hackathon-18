@@ -1,11 +1,7 @@
 import reverse_geocoder as rg
 
-
 # if exif data of image contains any gps information , we will use this to get the location it is pointing to , 
 # aim is find regional language from the locality pointed by gps coordinates
-
-
-
 
 from PIL import Image
 from PIL.ExifTags import TAGS, GPSTAGS
