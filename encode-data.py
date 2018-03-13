@@ -22,7 +22,7 @@ def readtext(file_name):
         [x, y, w, h] = cv2.boundingRect(contour)
         if w < 30 and h < 30:
             continue
-        cv2.rectangle(img, (x, y), (x + w, y + h), (2, 0, 255), 2)
+        # cv2.rectangle(img, (x, y), (x + w, y + h), (2, 0, 255), 2)
 
         cropped = img_final[y :y +  h , x : x + w]
         temp = file_name + '/crop_' + str(index) + '.jpg'
@@ -30,6 +30,7 @@ def readtext(file_name):
         index = index + 1
         text += pytesseract.image_to_string(Image.open(temp)) # append extracted text to the string
 
+    return text 
 
 def gettext(image):
     # This will call the necessary functions, put original text and translated text into a tuple and return that tuple text
